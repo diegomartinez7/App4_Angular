@@ -1,0 +1,24 @@
+<!-- <ul>
+    <li *ngFor="let pais of paises">{{pais.name}}</li>
+</ul> -->
+
+<!--<div class="card-columns">-->
+    <!--<div *ngFor="let release of releases" class="card">
+        <img [src]="release.images[0].url" alt="" class="card-img-top">
+        <div class="card-body">
+            <h5 class="card-title">{{release.name}}</h5>
+            <p class="card-text">
+                <span *ngFor="let artist of release.artists" class="badge badge-pill badge-success">{{artist.name}}</span>
+            </p>
+        </div>
+    </div>-->
+    <div class="row" *ngIf="loading">
+        <div class="col-12 text-center">
+            <app-login></app-login>
+        </div>
+    </div>
+    <div *ngIf="error" class="alert alert-danger">
+        <h3>Error: {{mensajeError}}</h3>
+    </div>
+    <app-cards [Items]="releases" *ngIf="!loading"></app-cards>
+<!--</div>-->
